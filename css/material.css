@@ -1,0 +1,45 @@
+header {
+  text-align: center;
+}
+header nav ul{
+  text-align: center;
+}
+header nav ul{
+  /*margin: auto;
+  width: 25%;*/
+  display: inline-block;
+}
+header nav ul li a {
+    position: relative;
+    color: #fff;
+    letter-spacing: -1px;
+    text-decoration: none;
+    font-weight: 300;
+    font-size: 2.7em;
+    margin: 0 25px;
+
+}
+
+#aboutimg{
+  box-sizing: border-box;
+  height: 150px;
+  width: 150px;
+  margin: 20px;
+}
+
+.get-in-touch {
+  text-align: center;
+}
+
+.follow a {
+  opacity: .25;
+  transition: .5s;
+}
+
+.follow a:hover {
+  opacity: 1;
+}
+
+.footer-copyright {
+  text-align: center;
+}
