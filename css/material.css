@@ -19,12 +19,22 @@ header nav ul li a {
     margin: 0 25px;
 
 }
+.contact-header {
+  @extend .indigo;
+}
 
+#mainHeader {
+  color: #FFC200;
+}
 #aboutimg{
   box-sizing: border-box;
   height: 150px;
   width: 150px;
   margin: 20px;
+}
+
+#titletext {
+  color: #FFC200;
 }
 
 .get-in-touch {
@@ -42,4 +52,9 @@ header nav ul li a {
 
 .footer-copyright {
   text-align: center;
+}
+
+.form-container {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
