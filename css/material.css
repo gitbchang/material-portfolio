@@ -1,14 +1,18 @@
+
 header {
-  text-align: center;
+    text-align: center;
 }
-header nav ul{
-  text-align: center;
+
+header nav ul {
+    text-align: center;
 }
-header nav ul{
-  /*margin: auto;
+
+header nav ul {
+    /*margin: auto;
   width: 25%;*/
-  display: inline-block;
+    display: inline-block;
 }
+
 header nav ul li a {
     position: relative;
     color: #fff;
@@ -17,44 +21,100 @@ header nav ul li a {
     font-weight: 300;
     font-size: 2.7em;
     margin: 0 25px;
-
 }
+
 .contact-header {
-  @extend .indigo;
+    @extend .indigo;
 }
 
 #mainHeader {
-  color: #FFC200;
+    color: #FFC200;
 }
-#aboutimg{
-  box-sizing: border-box;
-  height: 150px;
-  width: 150px;
-  margin: 20px;
+
+#aboutimg {
+    box-sizing: border-box;
+    height: 150px;
+    width: 150px;
+    margin: 20px;
 }
 
 #titletext {
-  color: #FFC200;
+    color: #FFC200;
+}
+
+#about-title {
+    font-size: 2em;
+    margin-left: 20px;
+
+}
+
+
+#about-line{
+    width: 50%;
+    border: 2px solid grey;
+    margin-left: 20px;
+}
+
+.testflex{
+    display: flex;
+    align-items: center;
+
+}
+
+.resumeflex {
+    display: flex;
+    height: 100vh;
+}
+
+
+
+#about-twitter{
+    font-size: 2.1em;
+    margin-left: 20px;
+}
+
+#about-info {
+    font-weight: 300;
+    font-size: 1.5em;
+
 }
 
 .get-in-touch {
-  text-align: center;
+    text-align: center;
 }
 
 .follow a {
-  opacity: .25;
-  transition: .5s;
+    opacity: .25;
+    transition: .5s;
 }
 
 .follow a:hover {
-  opacity: 1;
+    opacity: 1;
 }
 
 .footer-copyright {
-  text-align: center;
+    text-align: center;
 }
 
 .form-container {
-  margin-top: 20px;
-  margin-bottom: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.row>.input-field {
+    border: solid 1px gray;
+    background-color: white;
+    padding: 25px;
+    /*margin-bottom: 20px;*/
+}
+
+.input-field label {
+
+    left: 25px;
+    top: 50px;
+    margin: 0;
+    font-weight: 300;
+    z-index: 1;
+    font-size: 22px;
+    line-height: 10px;
 }
