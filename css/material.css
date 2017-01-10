@@ -161,7 +161,7 @@ transition:transform 0.5s;
 }
 
 .pf-icon:hover {
-    transform:scale(1.4);
+    transform:scale(1.25);
 }
 
 .pf-detail {
@@ -186,9 +186,3 @@ transition:transform 0.5s;
 
 /* keep the card off the page*/
 .card1 {transform: translateX(150%);}
-
-
-
-.panel.open-active > *:first-child {transform: translateY(0%);}
-.panel > *:last-child {transform: translateY(100%);}
-.panel.open-active > *:last-child {transform: translateY(0%);}
