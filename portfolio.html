@@ -8,6 +8,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 	<title>Portfolio Page</title>
+	<link href="css/material.css" rel="stylesheet">
 	<script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
 	<!-- Compiled and minified CSS -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
@@ -19,7 +20,7 @@
 	<script type="text/javascript" src="js/newjs.js">
 	</script>
 	<!-- Custom CSS -->
-	<link href="css/material.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -59,7 +60,7 @@
 			<div class="col s4">
 				<div class="pf-grid">
 					<div class="pf-icon pf-icon1">
-						<a href="#"></a>
+						<a href="#"><img style="height: 45px; width: 45px" src="images/rainbow.jpg" alt="rainbow"></a>
 					</div>
 					<div class="pf-icon pf-icon2">
 						<a href="#"></a>
@@ -78,25 +79,27 @@
 					</div>
 				</div>
 			</div>
-			<div class="col s4">
+			<div class="col s6">
 				<div class="pf-detail flex">
-					<div class="card" id="detail1">
+					<div class="card card1" id="detail1">
 						<div class="card-image">
 							<img src="images/rainbow.jpg">
-							<span class="card-title">Card Title</span>
+							<span class="ct card-title" style="color: black">Hangman Game</span>
 						</div>
 						<div class="card-content">
-							<p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+							<h5>Guess the colors of the rainbow in this hangman game!</h5>
+							<p>This was one of the first games created after learning jQuery. <br>
+							Personally, I like to use the jQuery syntax
+							of selecting DOM elements rather than plain javascript. It also allows me to add custom animations easily.</p>
+							<p>Technology Used: HTML/CSS, Javascript, jQuery</p>
 						</div>
 						<div class="card-action">
-							<a href="#">This is a link</a>
+							<a href="https://immense-thicket-37902.herokuapp.com/" target="_blank">Check It Out!</a>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="col s2">
 
-			</div>
 		</div>
 	</div>
 
@@ -132,5 +135,39 @@
 
 
 </body>
+<script type="text/javascript">
+var icon = $(".pf-icon");
+
+function toggleOpen(e){
+	$(this).toggleClass("open-active");
+	console.log(e);
+}
+function toggleCard(e){
+	var card = $(".card1");
+	var newThis = $(this);
+	console.log(newThis[0].className);
+	var cname = newThis[0].className;
+	if(cname.indexOf("open-active") >= 0){
+		console.log("i'm open");
+		// $(".card1").css("transform", "translateX(0%)");
+		$(".card1").css({
+			"transform": "translateX(0%)",
+			"transition": "1s"
+		});
+	}
+	else {
+		$(".card1").css({
+			"transform": "translateX(150%)",
+			"transition": "1s"
+		});
+	}
+
+	e.preventDefault();
+}
+
+icon.on("click", toggleOpen);
+icon.on("click", toggleCard);
+// icon.on("transitionend", toggleActive);
+</script>
 
 </html>
