@@ -81,16 +81,37 @@
 			</div>
 			<div class="col s8">
 				<div class="pf-detail">
-					<div class="card card1" id="detail1">
-						<div class="card-image">
-							<img src="images/rainbow.jpg">
-							<span class="ct card-title" style="color: black">Hangman Game</span>
+					<div class="card card1 medium hoverable" id="detail1">
+						<div class="card-image waves-effect waves-block waves-light">
+							<img class="activator" src="images/rainbow.jpg">
 						</div>
 						<div class="card-content">
-							<h5>Guess the colors of the rainbow in this hangman game!</h5>
-							<p class="flow-text">This was one of the first games created after learning jQuery. <br>
-							Personally, I like to use the jQuery syntax
-							of selecting DOM elements rather than plain javascript. It also allows me to add custom animations easily.</p>
+							<span class="ct card-title activator grey-text text-darken-4" style="color: black">Hangman Game</span>
+						</div>
+						<div class="card-reveal">
+							 <span class="card-title grey-text text-darken-4">Hangman<i class="material-icons right">close</i></span>
+							 <h5>Guess the colors of the rainbow in this hangman game!</h5>
+ 							<p class="flow-text">This was one of the first games created after learning jQuery. <br>
+ 							Personally, I like to use the jQuery syntax
+ 							of selecting DOM elements rather than plain javascript. It also allows me to add custom animations easily.</p>
+ 							<p class="flow-text">Technology Used: HTML/CSS, Javascript, jQuery</p>
+						</div>
+						<div class="card-action">
+							<a href="https://immense-thicket-37902.herokuapp.com/" target="_blank">Check It Out!</a>
+						</div>
+					</div>
+
+					<div class="card card2 medium hoverable" id="detail2">
+						<div class="card-image waves-effect waves-block waves-light">
+							<img class="activator" src="images/rainbow.jpg">
+						</div>
+						<div class="card-content">
+							<span class="ct card-title activator grey-text text-darken-4" style="color: black">NEXT TEST</span>
+						</div>
+						<div class="card-reveal">
+							 <span class="card-title grey-text text-darken-4">TEST2  Hangman<i class="material-icons right">close</i></span>
+							 <h5>TEST TEST TEST TEST TEST</h5>
+							<p class="flow-text">Lorem IPSUM</p>
 							<p class="flow-text">Technology Used: HTML/CSS, Javascript, jQuery</p>
 						</div>
 						<div class="card-action">
@@ -98,22 +119,7 @@
 						</div>
 					</div>
 
-					<!-- <div class="card card2" id="detail2">
-						<div class="card-image">
-							<img src="images/rainbow.jpg">
-							<span class="card-title" style="color: black">Hangman Game</span>
-						</div>
-						<div class="card-content">
-							<h5>Guess the colors of the rainbow in this hangman game!</h5>
-							<p class="flow-text">This was one of the first games created after learning jQuery. <br>
-							Personally, I like to use the jQuery syntax
-							of selecting DOM elements rather than plain javascript. It also allows me to add custom animations easily.</p>
-							<p class="flow-text">Technology Used: HTML/CSS, Javascript, jQuery</p>
-						</div>
-						<div class="card-action">
-							<a href="https://immense-thicket-37902.herokuapp.com/" target="_blank">Check It Out!</a>
-						</div>
-					</div> -->
+
 
 				</div>
 			</div>
@@ -173,6 +179,7 @@ function toggleOpen(e){
 	$(this).toggleClass("open-active");
 	// console.log(e);
 }
+
 function toggleCard(e){
 
 	// console.log($(this).data("number"));
@@ -195,26 +202,12 @@ function toggleCard(e){
 			"transition": "1s"
 		});
 	}
-
-	for(var i = 0; i < cards.length; i++){
-		// console.log($('*[data-card="'+ i + '"]'));
-		// we want the cards data cards
-
-
-	}
-
-	// var card = $(".card1");
-
-	// console.log(newThis[0].className);
-
-
-
 	e.preventDefault();
 }
 
 icon.on("click", toggleOpen);
 icon.on("click", toggleCard);
-// icon.on("transitionend", toggleActive);
+
 </script>
 
 </html>
