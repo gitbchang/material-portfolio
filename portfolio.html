@@ -54,13 +54,13 @@
 
 	<div class="container" id="body-container">
 		<div class="row">
-			<div class="col s2">
+			<!-- <div class="col s2">
 
-			</div>
+			</div> -->
 			<div class="col s4">
 				<div class="pf-grid">
 					<div class="pf-icon pf-icon1">
-						<a href="#"><img style="height: 45px; width: 45px" src="images/rainbow.jpg" alt="rainbow"></a>
+						<img src="images/rainbow.jpg" alt="rainbow">
 					</div>
 					<div class="pf-icon pf-icon2">
 						<a href="#"></a>
@@ -79,7 +79,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col s6">
+			<div class="col s8">
 				<div class="pf-detail">
 					<div class="card card1" id="detail1">
 						<div class="card-image">
@@ -88,15 +88,33 @@
 						</div>
 						<div class="card-content">
 							<h5>Guess the colors of the rainbow in this hangman game!</h5>
-							<p>This was one of the first games created after learning jQuery. <br>
+							<p class="flow-text">This was one of the first games created after learning jQuery. <br>
 							Personally, I like to use the jQuery syntax
 							of selecting DOM elements rather than plain javascript. It also allows me to add custom animations easily.</p>
-							<p>Technology Used: HTML/CSS, Javascript, jQuery</p>
+							<p class="flow-text">Technology Used: HTML/CSS, Javascript, jQuery</p>
 						</div>
 						<div class="card-action">
 							<a href="https://immense-thicket-37902.herokuapp.com/" target="_blank">Check It Out!</a>
 						</div>
 					</div>
+
+					<!-- <div class="card card2" id="detail2">
+						<div class="card-image">
+							<img src="images/rainbow.jpg">
+							<span class="card-title" style="color: black">Hangman Game</span>
+						</div>
+						<div class="card-content">
+							<h5>Guess the colors of the rainbow in this hangman game!</h5>
+							<p class="flow-text">This was one of the first games created after learning jQuery. <br>
+							Personally, I like to use the jQuery syntax
+							of selecting DOM elements rather than plain javascript. It also allows me to add custom animations easily.</p>
+							<p class="flow-text">Technology Used: HTML/CSS, Javascript, jQuery</p>
+						</div>
+						<div class="card-action">
+							<a href="https://immense-thicket-37902.herokuapp.com/" target="_blank">Check It Out!</a>
+						</div>
+					</div> -->
+
 				</div>
 			</div>
 
@@ -137,30 +155,59 @@
 </body>
 <script type="text/javascript">
 var icon = $(".pf-icon");
+var cards = $(".pf-detail > .card");
+// console.log(icon);
+// Add Data Identifiers to the small icons
+icon.each(function(e){
+	console.log($(this));
+	$(this).attr("data-number", e);
+})
+// console.log(icon);
+// Add Data Identifiers to the detail cards
+cards.each(function(e){
+	$(this).attr("data-card", e);
+});
+console.log(cards);
 
 function toggleOpen(e){
 	$(this).toggleClass("open-active");
-	console.log(e);
+	// console.log(e);
 }
 function toggleCard(e){
-	var card = $(".card1");
+
+	// console.log($(this).data("number"));
 	var newThis = $(this);
-	console.log(newThis[0].className);
 	var cname = newThis[0].className;
+	var iconID = $(this).data("number");
+	// var test = $('*[data-card="'+ i + '"]');
+	// console.log(test);
 	if(cname.indexOf("open-active") >= 0){
 		console.log("i'm open");
 		// $(".card1").css("transform", "translateX(0%)");
-		$(".card1").css({
+		$('*[data-card="'+ iconID + '"]').css({
 			"transform": "translateX(0%)",
 			"transition": "1s"
 		});
 	}
 	else {
-		$(".card1").css({
+		$('*[data-card="'+ iconID + '"]').css({
 			"transform": "translateX(150%)",
 			"transition": "1s"
 		});
 	}
+
+	for(var i = 0; i < cards.length; i++){
+		// console.log($('*[data-card="'+ i + '"]'));
+		// we want the cards data cards
+
+
+	}
+
+	// var card = $(".card1");
+
+	// console.log(newThis[0].className);
+
+
 
 	e.preventDefault();
 }
