@@ -4,7 +4,8 @@ $(document).ready(function() {
     Heading: "Guess the colors of the rainbow in this hangman game",
     Body: "This was one of the first games created after learning jQuery. Personally, I like to use the jQuery syntax of selecting DOM elements rather than plain javascript. It also allows me to add custom animations easily.",
     Tech: "Technology Used: HTML/CSS, Javascript, jQuery",
-    heroku_url: "https://immense-thicket-37902.herokuapp.com/"
+    heroku_url: "https://immense-thicket-37902.herokuapp.com/",
+    image_path: "images/rainbow.jpg"
   },
   {
     Title: "Test2",
@@ -85,7 +86,7 @@ $(document).ready(function() {
       var newDiv1 = $("<div>");
       newDiv1.addClass("card-image waves-effect waves-block waves-light");
       var titleImg = $("<img>");
-      titleImg.attr("src", "images/rainbow.jpg");
+      titleImg.attr("src", pfDetailArr[number].image_path);
       titleImg.addClass("activator");
       newDiv1.append(titleImg);
 
