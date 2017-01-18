@@ -3,7 +3,8 @@ $(document).ready(function() {
     Title: "Hangman",
     Heading: "Guess the colors of the rainbow in this hangman game",
     Body: "This was one of the first games created after learning jQuery. Personally, I like to use the jQuery syntax of selecting DOM elements rather than plain javascript. It also allows me to add custom animations easily.",
-    Tech: "Technology Used: HTML/CSS, Javascript, jQuery"
+    Tech: "Technology Used: HTML/CSS, Javascript, jQuery",
+    heroku_url: "https://immense-thicket-37902.herokuapp.com/"
   },
   {
     Title: "Test2",
@@ -28,6 +29,12 @@ $(document).ready(function() {
     Heading: "Test Heading 5",
     Body: "Test Body 5",
     Tech: "Tech Tech Used 5"
+  },
+  {
+    Title: "Test6",
+    Heading: "Test Heading 6",
+    Body: "Test Body 6",
+    Tech: "Tech Tech Used 6"
   }];
     var icon = $(".pf-icon");
     var cards = $(".pf-detail > .card");
@@ -112,10 +119,24 @@ $(document).ready(function() {
       cardReveal.append(cardHeading);
       cardReveal.append(descriptorParagraph);
       cardReveal.append(techUsedParagraph);
+      // ADD PROJECT LINK
+      var cardAction = $("<div>");
+
+      cardAction.addClass("card-action");
+      var herokuATag = $("<a/>", {
+        target: "_blank",
+        href: pfDetailArr[number].heroku_url,
+        text: "Check It Out!"
+      });
+      // var herokuATag = $("<a>");
+      // herokuATag.attr("href", pfDetailArr[number].heroku_url);
+      // herokuATag.attr("target", "_blank");
+      cardAction.append(herokuATag);
 
       finalCard.append(newDiv1);
       finalCard.append(cardContent);
       finalCard.append(cardReveal);
+      finalCard.append(cardAction);
       finalCard.css({
           "transform": "translateX(150%)",
           "transition": "1s"
