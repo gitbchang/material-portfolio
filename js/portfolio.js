@@ -82,16 +82,40 @@ $(document).ready(function() {
       titleImg.addClass("activator");
       newDiv1.append(titleImg);
 
-      var newDiv2 = $("<div>");
-      newDiv2.addClass("card-content");
+      var cardContent = $("<div>");
+      cardContent.addClass("card-content");
       var newSpan2 = $("<span>");
       newSpan2.addClass("ct card-title activator grey-text text-darken-4");
       newSpan2.css("color", "black");
       newSpan2.text(pfDetailArr[number].Title);
-      newDiv2.append(newSpan2);
+      cardContent.append(newSpan2);
+
+      var cardReveal = $("<div>");
+      cardReveal.addClass("card-reveal");
+      var newSpan3 = $("<span>");
+      newSpan3.addClass("card-title grey-text text-darken-4");
+      newSpan3.text(pfDetailArr[number].Title);
+      var cardHeading = $("<h5>");
+      cardHeading.text(pfDetailArr[number].Heading);
+      var closeIcon = $("<i>");
+      newSpan3.append(closeIcon);
+      closeIcon.addClass("material-icons right");
+      closeIcon.text("close");
+      var descriptorParagraph = $("<p>");
+      descriptorParagraph.addClass("flow-text");
+      descriptorParagraph.text(pfDetailArr[number].Body);
+      var techUsedParagraph = $("<p>");
+      techUsedParagraph.addClass("flow-text");
+      techUsedParagraph.text(pfDetailArr[number].Tech);
+      // ATTACH PARAGRAPHS TO CARD REVEAL DIV
+      cardReveal.append(newSpan3);
+      cardReveal.append(cardHeading);
+      cardReveal.append(descriptorParagraph);
+      cardReveal.append(techUsedParagraph);
 
       finalCard.append(newDiv1);
-      finalCard.append(newDiv2);
+      finalCard.append(cardContent);
+      finalCard.append(cardReveal);
       finalCard.css({
           "transform": "translateX(150%)",
           "transition": "1s"
