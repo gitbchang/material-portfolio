@@ -16,9 +16,22 @@ $(document).ready(function() {
     Heading: "Test Heading 3",
     Body: "Test Body 3",
     Tech: "Tech Tech Used 3"
+  },
+  {
+    Title: "Test4",
+    Heading: "Test Heading 4",
+    Body: "Test Body 4",
+    Tech: "Tech Tech Used 4"
+  },
+  {
+    Title: "Test5",
+    Heading: "Test Heading 5",
+    Body: "Test Body 5",
+    Tech: "Tech Tech Used 5"
   }];
     var icon = $(".pf-icon");
     var cards = $(".pf-detail > .card");
+    // var iconID;
     // console.log(icon);
     // Add Data Identifiers to the small icons
     icon.each(function(e) {
@@ -29,19 +42,37 @@ $(document).ready(function() {
     });
     // console.log(icon);
     // Add Data Identifiers to the detail cards
+  /*
     cards.each(function(e) {
         // $(this).addClass("hide");
         $(this).attr("data-card", e);
     });
-    console.log(cards);
+  */
+    // console.log(cards);
 
     function toggleOpen(e) {
-        $(this).toggleClass("open-active");
-        // console.log(e);
+    // first remove all open active buttons then activate the one selected
+      var iconID = $(this).data("number");
+        if ($(this).hasClass("open-active")) {
+            $(this).removeClass("open-active");
+            hideCard(iconID);
+        }
+        else {
+            $(".open-active").removeClass("open-active");
+            $(this).addClass("open-active");
+            createPFCard(iconID);
+            setTimeout(function() {
+                showCard(iconID);
+            }, 100);
+
+          // showCard(iconID);
+        }
+    // console.log(e);
     }
     // Create Detail cards on the fly using pfDetailArr
     function createPFCard(number){
       var finalCard = $("<div>");
+      finalCard.attr("data-number", number);
       finalCard.addClass("card card1 medium hoverable");
 
       var newDiv1 = $("<div>");
@@ -61,9 +92,36 @@ $(document).ready(function() {
 
       finalCard.append(newDiv1);
       finalCard.append(newDiv2);
-
+      finalCard.css({
+          "transform": "translateX(150%)",
+          "transition": "1s"
+      });
       $(".pf-detail").html(finalCard);
 
+    }
+    function showCard(e){
+      console.log("showing card");
+      console.log("icon id " + e);
+      $("div").data("card", e).css({
+          "transform": "translateX(0%)",
+          "transition": "1s"
+      });
+      /*
+      $('*[data-card="' + e + '"]').css({
+          "transform": "translateX(0%)",
+          "transition": "1s"
+      });
+      */
+      // preventDefault();
+
+    }
+    function hideCard(e){
+      console.log("hide card");
+      console.log("icon id " + e);
+      $(".pf-detail > div").data("card", e).css({
+          "transform": "translateX(150%)",
+          "transition": "1s"
+      });
     }
 
     function toggleCard(e) {
@@ -71,16 +129,27 @@ $(document).ready(function() {
         // console.log($(this).data("number"));
         var newThis = $(this);
         var cname = newThis[0].className;
-        var iconID = $(this).data("number");
+        $("div").data("card", iconID).css({
+            "transform": "translateX(0%)",
+            "transition": "1s"
+        });
+
+        $('*[data-card="' + iconID + '"]').css({
+            "transform": "translateX(0%)",
+            "transition": "1s"
+        });
+
+        // var iconID = $(this).data("number");
         // var test = $('*[data-card="'+ i + '"]');
         // console.log(test);
+      /*
         if (cname.indexOf("open-active") > 0) {
             console.log("i'm open");
             // $('*[data-card="'+ iconID + '"]').toggleClass("hide");
             // $(".card1").css("transform", "translateX(0%)");
 
 
-            // createPFCard(iconID);
+              // createPFCard(iconID);
 
             $('*[data-card="' + iconID + '"]').css({
                 "transform": "translateX(0%)",
@@ -94,15 +163,18 @@ $(document).ready(function() {
                 "transition": "1s"
             });
         }
+      */
         // if(cname.indexOf("animated bounce" >= 0)){
         // 	setTimeout($('*[data-card="'+ iconID + '"]').toggleClass("animated bounce"), 2000);
         // }
 
-        e.preventDefault();
+        // e.preventDefault();
     }
 
     icon.on("click", toggleOpen);
-    icon.on("click", toggleCard);
+    // icon.mouseup(showCard);
+
+
 
 
 });
