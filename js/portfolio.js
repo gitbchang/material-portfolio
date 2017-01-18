@@ -4,39 +4,50 @@ $(document).ready(function() {
     Heading: "Guess the colors of the rainbow in this hangman game",
     Body: "This was one of the first games created after learning jQuery. Personally, I like to use the jQuery syntax of selecting DOM elements rather than plain javascript. It also allows me to add custom animations easily.",
     Tech: "Technology Used: HTML/CSS, Javascript, jQuery",
-    heroku_url: "https://immense-thicket-37902.herokuapp.com/",
+    heroku_url: "https://rainbow-hangman.herokuapp.com/",
     image_path: "images/rainbow.jpg"
   },
   {
-    Title: "Test2",
-    Heading: "Test Heading 2",
-    Body: "Test Body 2",
-    Tech: "Tech Tech Used 2"
+    Title: "Westworld RPG",
+    Heading: "Choose Your Hero and Defeat Your Enemies",
+    Body: "This project improved my familiarity with javascript objects/array and how to loop through them. I also used the jQuery animations library.",
+    Tech: "Technology Used: HTML/CSS, Javascript, jQuery",
+    heroku_url: "https://westworld-rpg.herokuapp.com/",
+    image_path: "images/dolores-profile.jpg"
   },
   {
-    Title: "Test3",
-    Heading: "Test Heading 3",
-    Body: "Test Body 3",
-    Tech: "Tech Tech Used 3"
+    Title: "Crystal Collectors",
+    Heading: "A Simple Addition Game!",
+    Body: "I was able to learn how to use functions and bootstrap classes. This project was the beginning of the Westworld RPG Game.",
+    Tech: "Technology Used: HTML/CSS, Javascript, jQuery",
+    heroku_url: "https://crystal-collectors-31241.herokuapp.com/",
+    image_path: "images/ruby.png"
   },
   {
-    Title: "Test4",
-    Heading: "Test Heading 4",
-    Body: "Test Body 4",
-    Tech: "Tech Tech Used 4"
+    Title: "Train Schedule",
+    Heading: "Keep Track of Multiple Train Schedules",
+    Body: "My intro project for firebase. We are storing multiple train schedules and automatically calculating time of arrival.",
+    Tech: "Technology Used: Firebase, moment.js TIME API, Javascript",
+    heroku_url: "https://train-schedule-82408.herokuapp.com/",
+    image_path: "images/train-card.jpg"
   },
   {
-    Title: "Test5",
-    Heading: "Test Heading 5",
-    Body: "Test Body 5",
-    Tech: "Tech Tech Used 5"
+    Title: "The Office Trivia Game",
+    Heading: "Answer Trivia Questions about 'The Office(US)' TV show!",
+    Body: "Timing Events were the main focus in this project. I remade this project multiple times before using an object with multiple functions to run the game.",
+    Tech: "Technology Used: Javascript-setTimeout/setInterval, jQuery, HTML/CSS",
+    heroku_url: "https://office-trivia-31404.herokuapp.com/",
+    image_path: "images/jumbotron-office.jpg"
   },
   {
-    Title: "Test6",
-    Heading: "Test Heading 6",
+    Title: "Happy Medium",
+    Heading: "Find A Convenient Meeting Place!",
     Body: "Test Body 6",
-    Tech: "Tech Tech Used 6"
+    Tech: "Technology Used: Google Maps API, Firebase API, HTML/CSS, Javascript",
+    heroku_url: "https://desolate-sea-23025.herokuapp.com/",
+    image_path: "images/hm-logo.png"
   }];
+
     var icon = $(".pf-icon");
     var cards = $(".pf-detail > .card");
     // var iconID;
@@ -72,6 +83,9 @@ $(document).ready(function() {
             setTimeout(function() {
                 showCard(iconID);
             }, 100);
+            setTimeout(giveBounce, 1000);
+
+
 
           // showCard(iconID);
         }
@@ -87,16 +101,20 @@ $(document).ready(function() {
       newDiv1.addClass("card-image waves-effect waves-block waves-light");
       var titleImg = $("<img>");
       titleImg.attr("src", pfDetailArr[number].image_path);
-      titleImg.addClass("activator");
+      titleImg.addClass("activator valign-wrapper");
       newDiv1.append(titleImg);
 
       var cardContent = $("<div>");
       cardContent.addClass("card-content");
       var newSpan2 = $("<span>");
       newSpan2.addClass("ct card-title activator grey-text text-darken-4");
-      newSpan2.css("color", "black");
+      newSpan2.css({
+        "color": "black",
+        "font-weight": "bold"
+      });
       newSpan2.text(pfDetailArr[number].Title);
       cardContent.append(newSpan2);
+
 
       var cardReveal = $("<div>");
       cardReveal.addClass("card-reveal");
@@ -169,7 +187,16 @@ $(document).ready(function() {
           "transition": "1s"
       });
     }
+    function giveBounce(){
+      $(".pf-detail").addClass("animated bounce");
+      //setTimeout($(".pf-detail").removeClass("animated bounce"), 1000);
+      setTimeout(function() {
+          $(".pf-detail").removeClass("animated bounce");
+      }, 1000);
 
+    }
+
+/*
     function toggleCard(e) {
 
         // console.log($(this).data("number"));
@@ -209,14 +236,14 @@ $(document).ready(function() {
                 "transition": "1s"
             });
         }
-      */
+
         // if(cname.indexOf("animated bounce" >= 0)){
         // 	setTimeout($('*[data-card="'+ iconID + '"]').toggleClass("animated bounce"), 2000);
         // }
 
         // e.preventDefault();
     }
-
+*/
     icon.on("click", toggleOpen);
     // icon.mouseup(showCard);
 
