@@ -47,6 +47,7 @@ $(document).ready(function() {
     heroku_url: "https://happy-medium-33616.herokuapp.com/",
     image_path: "images/hm-logo.png"
   }];
+  // portfolio js
 
     var icon = $(".pf-icon");
     var cards = $(".pf-detail > .card");
