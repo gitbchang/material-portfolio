@@ -44,7 +44,7 @@ $(document).ready(function() {
     Heading: "Find A Convenient Meeting Place!",
     Body: "The purpose of this project was to find a convenient meeting spot for groups of people. It will suggest a restaurant/cafe based around the central location of multiple people.This is my first project to heavily utilize the Google Maps API.",
     Tech: "Technology Used: Google Maps API, Firebase API, HTML/CSS, Javascript",
-    heroku_url: "https://desolate-sea-23025.herokuapp.com/",
+    heroku_url: "https://happy-medium-33616.herokuapp.com/",
     image_path: "images/hm-logo.png"
   }];
 
